@@ -1,9 +1,12 @@
 package com.example.marcos.cadastrocliente;
 
+import android.content.ContentValues;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
 
 
@@ -22,6 +25,14 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+
+    public void cadastrar(View V){
+        DatabaseHelper db = getReadableDatabase();
+
+        ContentValues values = new ContentValues();
+    }
+
+
 
 
     @Override
@@ -45,4 +56,6 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }

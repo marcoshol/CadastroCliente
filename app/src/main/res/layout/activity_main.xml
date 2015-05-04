@@ -127,7 +127,8 @@
                 android:text="Cadastrar"
                 android:id="@+id/button"
                 android:layout_gravity="center_horizontal"
-                android:singleLine="false" />
+                android:singleLine="false"
+                android:onClick="cadastrar"/>
         </FrameLayout>
 
     </LinearLayout>
