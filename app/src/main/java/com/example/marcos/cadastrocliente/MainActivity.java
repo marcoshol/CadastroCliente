@@ -1,6 +1,7 @@
 package com.example.marcos.cadastrocliente;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -12,24 +13,42 @@ import android.widget.EditText;
 
 public class MainActivity extends ActionBarActivity {
 
-    EditText nome, cidade;
-    String snome, scidade;
+    EditText nome, cidade, telefone, estado, bairro, endereco;
+    String sNome, sCidade, sTelefone, sEstado, sBairro, sEndereco;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         nome = (EditText) findViewById(R.id.edt_nome);
         cidade = (EditText) findViewById(R.id.edt_cidade);
-        snome = nome.getText().toString();
-        scidade = cidade.getText().toString();
+        telefone = (EditText) findViewById(R.id.edt_telefone);
+        estado = (EditText) findViewById(R.id.edt_estado);
+        bairro = (EditText) findViewById(R.id.edt_bairro);
+        endereco = (EditText) findViewById(R.id.edt_endereco);
+        sNome = nome.getText().toString();
+        sCidade = cidade.getText().toString();
+        sTelefone = telefone.getText().toString();
+        sEstado = estado.getText().toString();
+        sBairro = bairro.getText().toString();
+        sEndereco = endereco.getText().toString();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
 
     public void cadastrar(View V){
-        DatabaseHelper db = getReadableDatabase();
 
-        ContentValues values = new ContentValues();
+        Pessoa pessoa = new Pessoa();
+        pessoa.setpNome(sNome);
+        pessoa.setpTelefone(sTelefone);
+        pessoa.setpEndereco(sEndereco);
+        pessoa.setpBairro(sBairro);
+        pessoa.setpCidade(sCidade);
+        pessoa.setpEstado(sEstado);
+
+        Intent i = new Intent(this, MostraPessoa.class);
+        i.putExtra("Pessoa", pessoa);
+        startActivity(i);
     }
 
 
