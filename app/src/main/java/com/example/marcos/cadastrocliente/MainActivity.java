@@ -13,8 +13,8 @@ import android.widget.EditText;
 
 public class MainActivity extends ActionBarActivity {
 
-    EditText nome, cidade, telefone, estado, bairro, endereco;
-    String sNome, sCidade, sTelefone, sEstado, sBairro, sEndereco;
+    private EditText nome, cidade, telefone, estado, bairro, endereco;
+    private String sNome, sCidade, sTelefone, sEstado, sBairro, sEndereco;
 
 
 
@@ -49,6 +49,7 @@ public class MainActivity extends ActionBarActivity {
         Intent i = new Intent(this, MostraPessoa.class);
         i.putExtra("Pessoa", pessoa);
         startActivity(i);
+
     }
 
 

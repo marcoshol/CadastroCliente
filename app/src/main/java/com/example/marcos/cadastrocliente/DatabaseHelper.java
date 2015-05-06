@@ -19,7 +19,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String dml = "CREATE TABLE cliente"+
         "(_id INTEGER PRIMARY KEY,"+
-        "nome TEXT NOT NULL, cidade TEXT);";
+        "nome TEXT NOT NULL,"+
+        "telefone TEXT,"+
+        "endereco TEXT,"+
+        "bairro TEXT,"+
+        "cidade TEXT,"+
+        "estado TEXT);";
         db.execSQL(dml);
     }
 
