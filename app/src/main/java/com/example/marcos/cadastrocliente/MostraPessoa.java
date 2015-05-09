@@ -57,8 +57,15 @@ public class MostraPessoa extends ActionBarActivity {
             Toast.makeText(this, "Dados gravados com Sucesso", Toast.LENGTH_LONG).show();
         }
 
+        olanome.setText(olanome.getText().toString()+sNome);
+        telefone.setText(telefone.getText().toString()+sTelefone);
+        endereco.setText(endereco.getText().toString()+sEndereco);
+        bairro.setText(bairro.getText().toString()+sBairro);
+        cidade.setText(cidade.getText().toString()+sCidade);
+        estado.setText(estado.getText().toString()+sEstado);
 
     }
+
 
 
     @Override

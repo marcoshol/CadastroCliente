@@ -20,23 +20,25 @@ public class MainActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        nome = (EditText) findViewById(R.id.edt_nome);
-        cidade = (EditText) findViewById(R.id.edt_cidade);
-        telefone = (EditText) findViewById(R.id.edt_telefone);
-        estado = (EditText) findViewById(R.id.edt_estado);
-        bairro = (EditText) findViewById(R.id.edt_bairro);
-        endereco = (EditText) findViewById(R.id.edt_endereco);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        nome = (EditText)findViewById(R.id.edt_nome);
+        cidade = (EditText)findViewById(R.id.edt_cidade);
+        telefone = (EditText)findViewById(R.id.edt_telefone);
+        estado = (EditText)findViewById(R.id.edt_estado);
+        bairro = (EditText)findViewById(R.id.edt_bairro);
+        endereco = (EditText)findViewById(R.id.edt_endereco);
+    }
+
+    public void cadastrar(View v){
+
         sNome = nome.getText().toString();
         sCidade = cidade.getText().toString();
         sTelefone = telefone.getText().toString();
         sEstado = estado.getText().toString();
         sBairro = bairro.getText().toString();
         sEndereco = endereco.getText().toString();
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-    }
-
-    public void cadastrar(View V){
 
         Pessoa pessoa = new Pessoa();
         pessoa.setpNome(sNome);
