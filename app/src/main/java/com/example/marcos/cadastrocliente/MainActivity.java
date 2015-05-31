@@ -15,6 +15,7 @@ public class MainActivity extends ActionBarActivity {
 
     private EditText nome, cidade, telefone, estado, bairro, endereco;
     private String sNome, sCidade, sTelefone, sEstado, sBairro, sEndereco;
+    ContaTempo contador;
 
 
 
@@ -29,6 +30,9 @@ public class MainActivity extends ActionBarActivity {
         estado = (EditText)findViewById(R.id.edt_estado);
         bairro = (EditText)findViewById(R.id.edt_bairro);
         endereco = (EditText)findViewById(R.id.edt_endereco);
+
+        contador = new ContaTempo();
+        contador.start();
     }
 
     public void cadastrar(View v){
@@ -47,6 +51,7 @@ public class MainActivity extends ActionBarActivity {
         pessoa.setpBairro(sBairro);
         pessoa.setpCidade(sCidade);
         pessoa.setpEstado(sEstado);
+        pessoa.setPmensagem(contador.getTempo());
 
         Intent i = new Intent(this, MostraPessoa.class);
         i.putExtra("Pessoa", pessoa);

@@ -7,6 +7,7 @@ import java.io.Serializable;
  */
 public class Pessoa implements Serializable {
      private String pNome, pTelefone, pEndereco, pBairro, pCidade, pEstado;
+     int pmensagem;
 
     public void Pessoa(){
 
@@ -67,5 +68,13 @@ public class Pessoa implements Serializable {
 
     public void setpEstado(String pEstado) {
         this.pEstado = pEstado;
+    }
+
+    public int getPmensagem() {
+        return pmensagem;
+    }
+
+    public void setPmensagem(int pmensagem) {
+        this.pmensagem = pmensagem;
     }
 }

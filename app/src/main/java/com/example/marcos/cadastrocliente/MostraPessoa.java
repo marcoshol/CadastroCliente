@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class MostraPessoa extends ActionBarActivity {
 
-    private TextView olanome, telefone, endereco, bairro, cidade, estado;
+    private TextView olanome, telefone, endereco, bairro, cidade, estado, mensagem;
     private String sNome, sCidade, sTelefone, sEstado, sBairro, sEndereco;
     private DatabaseHelper helper;
 
@@ -28,6 +28,7 @@ public class MostraPessoa extends ActionBarActivity {
         bairro = (TextView) findViewById(R.id.txt_bairro);
         cidade = (TextView) findViewById(R.id.txt_cidade);
         estado = (TextView) findViewById(R.id.txt_estado);
+        mensagem = (TextView) findViewById(R.id.txt_msg);
 
         Pessoa pessoa = (Pessoa) getIntent().getSerializableExtra("Pessoa");
 
@@ -63,6 +64,7 @@ public class MostraPessoa extends ActionBarActivity {
         bairro.setText(bairro.getText().toString()+sBairro);
         cidade.setText(cidade.getText().toString()+sCidade);
         estado.setText(estado.getText().toString()+sEstado);
+        mensagem.setText(mensagem.getText().toString()+ String.valueOf(pessoa.getPmensagem())+" segundos");
 
     }
 
